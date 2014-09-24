@@ -1,0 +1,206 @@
+﻿<html>
+	<head></head>
+
+	<title>多引擎搜索</title>
+	<style type=""css/text>
+	#wrap{
+		width:284px;
+		height: 168px;
+		-webkit-border-radius:8px;
+		border-radius: 8px;
+		-moz-border-radius:8px;
+		background-color: #F1F1F1;
+	}
+
+	#search-div{
+		padding-top: 10px;
+		padding-left: 25px;
+		height: 40px;
+		margin: auto;
+		clear: both;
+	}
+
+	#input_form{
+		height: 30px;
+
+
+	}
+
+	#go-search{
+		height: 30px;
+		width: 48px;
+		
+
+	}
+	#select{
+		width: 400px;
+		padding-left: 18px;
+		margin:auto;
+		float: left;
+		padding-top: 20px;
+	}
+
+
+	.searcher,.searcher-go{
+		float: left;
+		width: 44px;
+		margin-left: 10px;
+		line-height: 24px;
+		text-align: center;
+		border-radius: 2px;
+		-webkit-border-radius:2px;
+		-moz-border-radius:2px;
+		background-color:#D5BEBE; 
+		height: 24px;
+		cursor: pointer;
+
+	}
+
+	.searcher{
+		background-color: #D5BEBE;
+	}
+
+	.searcher-go{
+		background-color: #E27373;
+
+	}
+
+	</style>
+	<body>
+		<div id="wrap">
+			<div id="search-div">
+				<form name="loandata">
+					<input type="text"  id="input_form" name="word">
+					<span>
+						<input type="submit" id="go-search" value="搜索">
+					</span>
+
+				</form>
+			</div>
+			<div id="select">
+				<div class="searcher" id="google">谷歌</div>
+				<div class="searcher" id="baidu">百度</div>
+				<div class="searcher" id="sougou">搜狗</div>
+				<div class="searcher" id="sousou">搜搜</div>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+	
+		var secleted=[0,0,0,0];
+		document.getElementById('google').onclick=function(){
+			if(secleted[0]===0)
+				{
+				secleted[0]=1;
+				document.getElementById("google").className="searcher-go";
+
+			}
+			else if(secleted[0]===1)
+			{
+				secleted[0]=0;
+				document.getElementById('google').className="searcher";
+
+			}
+		}
+
+		document.getElementById('baidu').onclick=function(){
+			if(secleted[1]===0)
+			{
+				secleted[1]=1;
+				document.getElementById("baidu").className="searcher-go";
+
+
+			}
+			else if(secleted[1]===1)
+			{
+				secleted[1]=0;
+				document.getElementById("baidu").className="searcher";
+
+			}
+
+
+		}
+
+				document.getElementById('sougou').onclick=function(){
+			if(secleted[2]===0)
+			{
+				secleted[2]=1;
+				document.getElementById("sougou").className="searcher-go";
+
+
+			}
+			else if(secleted[2]===1)
+			{
+				secleted[2]=0;
+				document.getElementById("sougou").className="searcher";
+
+			}
+
+
+		}
+		document.getElementById('sousou').onclick=function(){
+			if(secleted[3]===0)
+			{
+				secleted[3]=1;
+				document.getElementById("sousou").className="searcher-go";
+
+
+			}
+			else if(secleted[3]===1)
+			{
+				secleted[3]=0;
+				document.getElementById("sousou").className="searcher";
+
+			}
+
+
+		}
+
+
+		
+document.getElementById('go-search').onclick=function(){
+	var word=document.loandata.word.value;
+	words=word.split(" ");
+	var len=words.length;
+	var string="";
+		for (i=0;i<len;i++) {
+			string+="%20"+words[i];
+			
+		};
+	if(secleted[0])
+	{
+		
+		string1="https://www.google.com/search?hl=zh-CN&q="+string;
+		window.open(string1);
+
+	}
+
+	 if(secleted[1])
+	{
+		string2="http://www.baidu.com/s?wd="+string;
+		window.open(string2);
+	}
+	
+	if(secleted[2])
+	{
+
+		string3="http://www.sogou.com/web?query="+string;
+		window.open(string3);
+	}
+	if(secleted[3])
+	{
+		string4="http://www.soso.com/q?pid=s.idx&cid=s.idx.se&w="+string;
+		window.open(string4);
+
+	}
+
+
+}
+
+
+
+
+	</script>
+
+</html>

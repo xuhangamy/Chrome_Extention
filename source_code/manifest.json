@@ -1,0 +1,10 @@
+﻿{
+  "name": "万年历",
+  "version": "1.0",
+  "description": "万年历(含有农历及节假日)",
+  "browser_action": {
+    "default_icon": "icon.gif",
+	"default_popup": "calendar.html" 
+  },
+  "manifest_version": 2
+}

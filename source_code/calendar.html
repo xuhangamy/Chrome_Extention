@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>万年历</TITLE>
+<META content="gregorian solar calendar and chinese lunar calendar" 
+name=description>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>                     
+<SCRIPT type="text/javascript" src="js/1.js"></SCRIPT>
+
+
+
+<STYLE>.todyaColor {
+    BACKGROUND-COLOR: #cc9900;
+}
+</STYLE>
+
+<META content="Microsoft FrontPage 4.0" name=GENERATOR></HEAD>
+<BODY id="one"  onload=initial() background="bg.jpg">
+<DIV id=detail style="POSITION: absolute"></DIV>
+<CENTER>
+<FORM name=CLD>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD align=middle>
+      <DIV style="POSITION: absolute; TOP: 30px; Z-INDEX: -1"><FONT id=YMBG 
+      style="COLOR: #f0f0f0; FONT-FAMILY: 'Arial Black'; FONT-SIZE: 100pt">&nbsp;0000<BR>&nbsp;JUN</FONT> 
+      </DIV>
+      <TABLE border=0>
+        <TBODY>
+        <TR align=middle>
+          <TD bgColor=#cc6633 colSpan=7><FONT color=#ffffff size=2 
+            style="FONT-SIZE: 10.5pt">西历<Select name=SY onchange=changeCld() 
+            style="FONT-SIZE: 9pt"> 
+              <SCRIPT>drawoption1();</SCRIPT>
+            </SELECT>年<Select name=SM onchange=changeCld() 
+            style="FONT-SIZE: 9pt"> 
+              <SCRIPT>
+              drawoption2();
+             </SCRIPT>
+            </SELECT>月</FONT>
+			<BR/>
+			<FONT color=#ffffff face=宋体 id="GZ" size=2>
+      </FONT>
+			<BR>
+		  </TD>
+		</TR>
+        <TR align=middle>
+          <TD width=54>日</TD>
+          <TD width=54>一</TD>
+          <TD width=54>二</TD>
+          <TD width=50>三</TD>
+          <TD width=54>四</TD>
+          <TD width=54>五</TD>
+          <TD width=54>六</TD></TR>
+        <SCRIPT> 
+        drawinfo();
+</SCRIPT>
+        </TBODY></TABLE></TD>
+    </TR></TBODY></TABLE></FORM>
+</CENTER>
+</BODY>
+</HTML>
